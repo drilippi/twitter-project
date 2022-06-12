@@ -27,7 +27,8 @@ def create_url():
 
 
 def get_params():
-    return {"user.fields": "created_at"}
+    # return {"user.fields": "created_at", "max_results": 100, "pagination_token" : "" }
+    return {"user.fields": "created_at", "max_results": 1000 }
 
 
 def bearer_oauth(r):
@@ -64,5 +65,5 @@ def main():
 
 if __name__ == "__main__":
     results = main()
-    with open('follower1.json', 'w') as outfile:
+    with open('followers1.json', 'w') as outfile:
         json.dump(results, outfile)
